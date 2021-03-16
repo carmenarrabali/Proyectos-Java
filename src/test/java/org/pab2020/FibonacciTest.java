@@ -15,7 +15,7 @@ public class FibonacciTest {
     }
 
     @Test
-    public void shouldFibonacciOf1Return1() {
+    public void shouldFibonacciOf1and1Return1() {
         int result = fibonacci.fibonacci(1, 1);
         int expectedValue = 1;
 
