@@ -1,4 +1,4 @@
-# Programación Avanzada en Bioinformática. Curso 2020/2021.
+# Programación Avanzada en Bioinformática. Curso 2020/2021. 📌
 
 En este repositorio se van a encontrar todos los archivos de proyectos relacionados con la asignatura Programación Avanzada en Bioinformática.
 
