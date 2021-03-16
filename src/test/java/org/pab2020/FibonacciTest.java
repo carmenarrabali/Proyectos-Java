@@ -40,6 +40,6 @@ public class FibonacciTest {
 
     @Test
     public void shouldFibonacciOfMinusOneReturn____() {
-        assertThrows(RuntimeException.class, () -> fibonacci.fibonacci(-1,-1);
+        assertThrows(RuntimeException.class, () -> fibonacci.fibonacci(-1,-1));
     }
 }
