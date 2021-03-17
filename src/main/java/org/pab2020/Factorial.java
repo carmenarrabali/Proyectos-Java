@@ -1,5 +1,7 @@
 package org.pab2020;
 
+import java.math.BigInteger;
+
 /** Class to compute the factorial of an integer number */
 public class Factorial {
     /**
@@ -7,16 +9,11 @@ public class Factorial {
      * @param value
      * @return
      */
-    public int compute(int value) {
-        if(value < 0) {
-            throw new RuntimeException("Error. Negative number: " + value);
-        }
+    public BigInteger compute(int value) {
+        BigInteger result = BigInteger.ONE;
 
-        int result = 1;
-        int i=1;
-        while (i <= value) {
-            result *= i;
-            i++;
+        for (int i = value; i > 0; i--){
+            result = result.multiply(BigInteger.valueOf(i));
         }
         return result;
     }
