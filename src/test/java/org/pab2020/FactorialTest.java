@@ -3,6 +3,8 @@ package org.pab2020;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigInteger;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -25,48 +27,62 @@ class FactorialTest {
     }
     @Test
     public void shouldFactorialOf0Return1() {
-        int result = factorial.compute(0);
-        int expectedValue = 1;
+        BigInteger result = factorial.compute(0);
+        BigInteger expectedValue = BigInteger.valueOf(1);
 
         assertEquals(expectedValue, result);
     }
 
     @Test
     public void shouldFactorialOf1Return1() {
-        int result = factorial.compute(1);
-        int expectedValue = 1;
+        BigInteger result = factorial.compute(1);
+        BigInteger expectedValue = BigInteger.valueOf(1);
 
         assertEquals(expectedValue, result);
     }
 
     @Test
     public void shouldFactorialOf2Return2() {
-        int result = factorial.compute(2);
-        int expectedValue = 2;
+        BigInteger result = factorial.compute(2);
+        BigInteger expectedValue = BigInteger.valueOf(2);
 
         assertEquals(expectedValue, result);
     }
 
     @Test
     public void shouldFactorialOf3Return6() {
-        int result = factorial.compute(3);
-        int expectedValue = 6;
+        BigInteger result = factorial.compute(3);
+        BigInteger expectedValue = BigInteger.valueOf(6);
 
         assertEquals(expectedValue, result);
     }
 
     @Test
     public void shouldFactorialOf4Return24() {
-        int result = factorial.compute(4);
-        int expectedValue = 24;
+        BigInteger result = factorial.compute(4);
+        BigInteger expectedValue = BigInteger.valueOf(24);
 
         assertEquals(expectedValue, result);
     }
 
     @Test
     public void shouldFactorialOf8Return40320() {
-        int result = factorial.compute(8);
-        int expectedValue = 40320;
+        BigInteger result = factorial.compute(8);
+        BigInteger expectedValue = BigInteger.valueOf(40320);
+
+        assertEquals(expectedValue, result);
+    }
+
+    public void shouldFactorialOf17Return355687428096000() {
+        BigInteger result = factorial.compute(17);
+        BigInteger expectedValue = new BigInteger("355687428096000");
+
+        assertEquals(expectedValue, result);
+    }
+
+    public void shouldFactorialOf25Return15511210043330985984000000() {
+        BigInteger result = factorial.compute(25);
+        BigInteger expectedValue = new BigInteger("15511210043330985984000000");
 
         assertEquals(expectedValue, result);
     }
