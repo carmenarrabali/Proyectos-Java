@@ -27,16 +27,12 @@ public class Theater {
 
         System.out.println("Created " + ticketOffices.size());
 
-        ticketOffices.get(0).start();
-        ticketOffices.get(1).start();
-        ticketOffices.get(2).start();
-        ticketOffices.get(3).start();
+        IntStream.range(0, numberOfTicketOffices).forEach(i -> ticketOffices.get(i).start());
 
         try{
-            ticketOffices.get(0).join();
-            ticketOffices.get(1).join();
-            ticketOffices.get(2).join();
-            ticketOffices.get(3).join();
+            for (int i = 0; i < numberOfTicketOffices; i++) {
+                ticketOffices.get(i).join();
+            }
         } catch (InterruptedException e){
             e.printStackTrace();
         }
