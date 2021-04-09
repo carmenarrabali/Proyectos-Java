@@ -18,18 +18,21 @@ public class TicketOffice extends Thread{
     @Override
     public void run(){
         System.out.println("Starting ticket office " + identifier);
-        for (int i = 0; i < numberOfSeatsToSell; i++) {
-            System.out.println(identifier + ": " + i);
-        }
+        //for (int i = 0; i < numberOfSeatsToSell; i++) {
+            //System.out.println(identifier + ": " + i);
+        //}
 
         Random random = new Random();
 
         int numberOfSoldSeats = 0;
         while(numberOfSoldSeats < numberOfSeatsToSell){
             int selectedSeat = random.nextInt(freeSeats.size());
-            if(freeSeats.get(selectedSeat)){
-                freeSeats.set(selectedSeat, false);
-                numberOfSoldSeats++;
+            synchronized (freeSeats){
+                if(freeSeats.get(selectedSeat)){
+                    freeSeats.set(selectedSeat, false);
+                    numberOfSoldSeats++;
+                    System.out.println(identifier + " sold seat " +  selectedSeat);
+                }
             }
             //Issue ticket
         }
