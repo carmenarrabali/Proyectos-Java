@@ -1,4 +1,4 @@
-package org.pab2020;
+package org.pab2020.Theater;
 
 import java.util.ArrayList;
 import java.util.List;

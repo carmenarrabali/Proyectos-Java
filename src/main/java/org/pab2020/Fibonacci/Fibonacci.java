@@ -1,4 +1,4 @@
-package org.pab2020;
+package org.pab2020.Fibonacci;
 
 public class Fibonacci {
     /**
