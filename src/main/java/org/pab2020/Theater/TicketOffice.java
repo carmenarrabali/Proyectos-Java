@@ -6,12 +6,12 @@ public class TicketOffice extends Thread{
 
     private List<Boolean> freeSeats;
     private int identifier;
-    private int numberOfSeats;
+    private int numberOfSeatsToSell ;
 
-    public TicketOffice(int identifier, List<Boolean> freeSeats, int numberOfSeats){
+    public TicketOffice(int identifier, List<Boolean> freeSeats, int numberOfSeatsToSell){
         this.identifier = identifier;
         this.freeSeats = freeSeats;
-        this.numberOfSeats = numberOfSeats;
+        this.numberOfSeatsToSell = numberOfSeatsToSell;
     }
 
     @Override
