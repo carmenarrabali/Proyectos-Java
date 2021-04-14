@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MainSum {
-    public static void main(String[] args) {
+public class MainSumWithPartialSumWithTwoPartitionsParallel {
+    public static void main(String[] args) throws InterruptedException {
         final int CAPACITY = 10000;
         List<Double> listOfNumbers = new ArrayList<>(CAPACITY);
 
@@ -19,14 +19,21 @@ public class MainSum {
         Delay delay = new Delay(20000);
 
         /* 3. Sum the numbers */
-        SumTwoNumbers sumTwoNumbers = new SumTwoNumbers();
+        PartialSumOfAList partialSumOfAList1 = new PartialSumOfAList(listOfNumbers, 0, listOfNumbers.size() / 2, delay);
+        PartialSumOfAList partialSumOfAList2 = new PartialSumOfAList(listOfNumbers, listOfNumbers.size() / 2, listOfNumbers.size(), delay);
 
         long initTime = System.currentTimeMillis();
-        double sum = 0.0;
-        for (double value : listOfNumbers) {
-            sum = sumTwoNumbers.sum(sum, value, delay);
-        }
+
+        partialSumOfAList1.start();
+        partialSumOfAList2.start();
+
+        partialSumOfAList1.join();
+        partialSumOfAList2.join();
+
+        double sum = partialSumOfAList1.getSum() + partialSumOfAList2.getSum();
+
         long computingTime = System.currentTimeMillis() - initTime;
+
         System.out.println("Computing time: " + computingTime);
         System.out.println("Sum: " + sum);
     }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MainSum {
+public class MainSumWithPartialSum {
     public static void main(String[] args) {
         final int CAPACITY = 10000;
         List<Double> listOfNumbers = new ArrayList<>(CAPACITY);
@@ -16,16 +16,16 @@ public class MainSum {
         }
 
         /* 2. Create the delay */
-        Delay delay = new Delay(20000);
+        Delay delay = new Delay(10000);
 
         /* 3. Sum the numbers */
-        SumTwoNumbers sumTwoNumbers = new SumTwoNumbers();
+        PartialSumOfAList partialSumOfAList = new PartialSumOfAList(listOfNumbers, 0, listOfNumbers.size(), delay);
 
         long initTime = System.currentTimeMillis();
-        double sum = 0.0;
-        for (double value : listOfNumbers) {
-            sum = sumTwoNumbers.sum(sum, value, delay);
-        }
+
+        partialSumOfAList.run();
+        double sum = partialSumOfAList.getSum();
+
         long computingTime = System.currentTimeMillis() - initTime;
         System.out.println("Computing time: " + computingTime);
         System.out.println("Sum: " + sum);
