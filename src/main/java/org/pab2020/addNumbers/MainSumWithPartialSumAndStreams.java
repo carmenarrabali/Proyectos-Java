@@ -4,6 +4,7 @@
 
 package org.pab2020.addNumbers;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -44,8 +45,11 @@ public class MainSumWithPartialSumAndStreams {
                 .stream()
                 .filter(number -> number > 475)
                 .distinct()
+                .peek(i -> System.out.println(i))
                 .sorted()
                 .collect(Collectors.toList());
+
+
 
         long computingTime = System.currentTimeMillis() - initTime;
 
