@@ -1,7 +1,8 @@
-package org.pab2020;
+package org.pab2020.FactorialTest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.pab2020.Factorial.Factorial;
 
 import java.math.BigInteger;
 

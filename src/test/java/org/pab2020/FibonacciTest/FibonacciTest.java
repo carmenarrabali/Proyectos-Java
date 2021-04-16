@@ -1,7 +1,8 @@
-package org.pab2020;
+package org.pab2020.FibonacciTest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.pab2020.Fibonacci.Fibonacci;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
