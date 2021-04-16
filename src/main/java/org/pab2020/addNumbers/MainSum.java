@@ -15,11 +15,14 @@ public class MainSum {
         /* 1. Initialization of the numbers */
         Random randomNumberGenerator = new Random(5);
         for (int i = 0; i < CAPACITY; i++) {
-            listOfNumbers.add((double) randomNumberGenerator.nextInt(500));
+            double number = (double) randomNumberGenerator.nextInt(500);
+            if(number % 2 == 0){
+                listOfNumbers.add(number);
+            }
         }
 
         /* 2. Create the delay */
-        Delay delay = new Delay(20000);
+        Delay delay = new Delay(50);
 
         /* 3. Sum the numbers */
         SumTwoNumbers sumTwoNumbers = new SumTwoNumbers();
