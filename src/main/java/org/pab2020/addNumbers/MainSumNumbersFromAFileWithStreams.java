@@ -32,5 +32,6 @@ public class MainSumNumbersFromAFileWithStreams {
 
         System.out.println("Computing time: " + computingTime);
         System.out.println("Total sum: " + total);
+
     }
 }
