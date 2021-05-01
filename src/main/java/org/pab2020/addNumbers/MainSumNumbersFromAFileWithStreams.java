@@ -1,7 +1,6 @@
 package org.pab2020.addNumbers;
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
@@ -18,9 +17,8 @@ public class MainSumNumbersFromAFileWithStreams {
         long initTime = System.currentTimeMillis();
 
         try {
-            Stream<String> streamOfLines = Files.lines(Paths.get(args[0])) ;
+            Stream<String> streamOfLines = Files.lines(Paths.get("../Data/numbers")) ;
             total = streamOfLines
-                    .parallel()
                     .map(line -> Double.valueOf(line))
                     .reduce(0.0, (a, b) -> sumNumbers.sum(a, b, delay)) ;
 
