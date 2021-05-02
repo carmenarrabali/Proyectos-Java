@@ -23,7 +23,7 @@ public class MainSumWithPartialSumAndStreams {
         }
 
         // Step 2. Create the Delay
-        Delay delay = new Delay(20000);
+        Delay delay = new Delay(100);
 
         // Step 3. Sum the numbers
         SumTwoNumbers sumTwoNumbers = new SumTwoNumbers();

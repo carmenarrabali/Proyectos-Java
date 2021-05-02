@@ -8,12 +8,12 @@ public class MainSumNumbersFromAFile {
             throw new RuntimeException("Missing argument. Usage: java MainSumNumbersFromAFile fileName");
         }
 
-        InputStream inputStream = new FileInputStream("../Data/numbers") ;
+        InputStream inputStream = new FileInputStream(args[0]) ;
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
         SumTwoNumbers sumNumbers = new SumTwoNumbers() ;
-        Delay delay= new Delay(1000) ;
+        Delay delay= new Delay(100) ;
 
         double total = 0.0 ;
         long initTime = System.currentTimeMillis();

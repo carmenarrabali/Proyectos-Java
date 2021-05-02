@@ -19,7 +19,7 @@ public class MainSum {
         }
 
         /* 2. Create the delay */
-        Delay delay = new Delay(1000);
+        Delay delay = new Delay(100);
 
         /* 3. Sum the numbers */
         SumTwoNumbers sumTwoNumbers = new SumTwoNumbers();

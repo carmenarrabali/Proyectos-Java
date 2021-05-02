@@ -11,13 +11,13 @@ public class MainSumNumbersFromAFileWithStreams {
         }
 
         SumTwoNumbers sumNumbers = new SumTwoNumbers() ;
-        Delay delay= new Delay(5000) ;
+        Delay delay= new Delay(100) ;
 
         double total = 0 ;
         long initTime = System.currentTimeMillis();
 
         try {
-            Stream<String> streamOfLines = Files.lines(Paths.get("../Data/numbers")) ;
+            Stream<String> streamOfLines = Files.lines(Paths.get(args[0])) ;
             total = streamOfLines
                     .map(line -> Double.valueOf(line))
                     .reduce(0.0, (a, b) -> sumNumbers.sum(a, b, delay)) ;
